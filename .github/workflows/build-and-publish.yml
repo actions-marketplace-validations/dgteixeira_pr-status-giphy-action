@@ -14,14 +14,14 @@ jobs:
     name: Docker Build
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v6
     - run: docker build -t pr-status-giphy-action .
   docker_tag_publish:
     needs: [docker_build]
     name: Docker Tag and Publish
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v6
     - uses: elgohr/Publish-Docker-Github-Action@v4
       with:
         name: dgteixeira/pr-status-giphy-action/pr-status-giphy-action
